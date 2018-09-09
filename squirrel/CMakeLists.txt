@@ -13,7 +13,7 @@ set(SQUIRREL_SRC sqapi.cpp
 
 if(NOT DISABLE_DYNAMIC)
   add_library(squirrel SHARED ${SQUIRREL_SRC})
-  target_include_directories(squirrel SHARED ${CMAKE_CURRENT_SOURCE_DIR)/include)
+  target_include_directories(squirrel SHARED ${CMAKE_CURRENT_SOURCE_DIR}/include)
   if(NOT SQ_DISABLE_INSTALLER)
     install(TARGETS squirrel RUNTIME DESTINATION ${INSTALL_BIN_DIR}
                          LIBRARY DESTINATION ${INSTALL_LIB_DIR}
@@ -23,7 +23,7 @@ endif()
 
 if(NOT DISABLE_STATIC)
   add_library(squirrel_static STATIC ${SQUIRREL_SRC})
-  target_include_directories(squirrel_static STATIC ${CMAKE_CURRENT_SOURCE_DIR)/include)
+  target_include_directories(squirrel_static STATIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
   if(NOT SQ_DISABLE_INSTALLER)
     install(TARGETS squirrel_static ARCHIVE DESTINATION ${INSTALL_LIB_DIR})
   endif()

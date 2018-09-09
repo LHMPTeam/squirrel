@@ -10,7 +10,7 @@ set(SQSTDLIB_SRC sqstdaux.cpp
 if(NOT DISABLE_DYNAMIC)
   add_library(sqstdlib SHARED ${SQSTDLIB_SRC})
   target_link_libraries(sqstdlib squirrel)
-  target_include_directories(sqstdlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR)/include)
+  target_include_directories(sqstdlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
   if(NOT SQ_DISABLE_INSTALLER)
     install(TARGETS sqstdlib RUNTIME DESTINATION ${INSTALL_BIN_DIR}
                              LIBRARY DESTINATION ${INSTALL_LIB_DIR}
@@ -20,7 +20,7 @@ endif()
 
 if(NOT DISABLE_STATIC)
   add_library(sqstdlib_static STATIC ${SQSTDLIB_SRC})
-  target_include_directories(sqstdlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR)/include)
+  target_include_directories(sqstdlib_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
   if(NOT SQ_DISABLE_INSTALLER)
     install(TARGETS sqstdlib_static ARCHIVE DESTINATION ${INSTALL_LIB_DIR})
   endif()
